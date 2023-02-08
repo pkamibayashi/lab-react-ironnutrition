@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Router } from 'react-router-dom';
+import food from './foods.json';
+import FoodBox from './components/foodBox/foodBox';
+import AddFoodForm from './components/addForm/addForm';
 
 function App() {
+  let foodArr = food;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <AddFoodForm />
+      </div>
+      {foodArr.map((food) => {
+        return (
+          <div key={food.name}>
+            <FoodBox
+              name={food.name}
+              calories={food.calories}
+              image={food.image}
+              servings={food.servings}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
