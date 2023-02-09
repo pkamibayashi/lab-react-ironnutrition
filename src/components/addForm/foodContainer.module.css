@@ -1,0 +1,13 @@
+.foodBoxContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding: 2rem;
+  margin-left: 25%;
+  margin-right: 25%;
+}
